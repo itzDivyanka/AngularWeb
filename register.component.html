@@ -1,0 +1,80 @@
+<div class="register-popup">
+  <h2>Register</h2>
+  <form [formGroup ] ="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" formControlName="firstName" required>
+      <div *ngIf="registerForm.get('firstName').invalid && registerForm.get('firstName').touched">
+        <small *ngIf="registerForm.get('firstName').errors?.required">First Name is required</small>
+        <small *ngIf="registerForm.get('firstName').errors?.pattern">Invalid format</small>
+        <small *ngIf="registerForm.get('firstName').errors?.maxlength">Max length is 20</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" formControlName="lastName" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" formControlName="phone" required>
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="range" id="age" formControlName="age" min="20" max="60" step="1">
+      <span>{{registerForm.get('age').value}}</span>
+    </div>
+    <div class="form-group">
+      <label for="state">State</label>
+      <input type="text" id="state" formControlName="state" required>
+    </div>
+    <div class="form-group">
+      <label for="country">Country</label>
+      <input type="text" id="country" formControlName="country" required>
+    </div>
+    <div class="form-group">
+      <label for="addressType">Address Type</label>
+      <select id="addressType" formControlName="addressType" (change)="onAddressTypeChange($event)">
+        <option value="Home">Home</option>
+        <option value="Company">Company</option>
+      </select>
+    </div>
+    <div *ngIf="isHomeAddress">
+      <div class="form-group">
+        <label for="address1">Address 1</label>
+        <input type="text" id="address1" formControlName="address1">
+      </div>
+      <div class="form-group">
+        <label for="address2">Address 2</label>
+        <input type="text" id="address2" formControlName="address2">
+      </div>
+    </div>
+    <div *ngIf="isCompanyAddress">
+      <div class="form-group">
+        <label for="companyAddress1">Company Address 1</label>
+        <input type="text" id="companyAddress1" formControlName="companyAddress1">
+      </div>
+      <div class="form-group">
+        <label for="companyAddress2">Company Address 2</label>
+        <input type="text" id="companyAddress2" formControlName="companyAddress2">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="tags">Interests</label>
+      <input type="text" id="tags" formControlName="tags">
+    </div>
+    <div class="form-group">
+      <label for="photo">Upload Photo</label>
+      <input type="file" id="photo" (change)="onFileChange($event)">
+    </div>
+    <div class="form-group">
+      <input type="checkbox" id="subscribe" formControlName="subscribe">
+      <label for="subscribe">Subscribe to newsletter</label>
+    </div>
+    <button type="submit" [disabled]="registerForm.invalid">Submit</button>
+    <button type="button" (click)="onCancel()">Cancel</button>
+  </form>
+</div>

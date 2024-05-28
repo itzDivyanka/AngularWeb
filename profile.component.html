@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="profile.component.css" />
+  <title>Browser</title>
+</head>
+
+<body>
+
+<div class="profile-screen">
+  <h2>Profile Page</h2>
+  <div *ngIf="user">
+    <div class="profile-photo">
+      <img [src]="user.photo" alt="User Photo">
+     
+ 
+      
+            <div class="buttons">
+              <button class="btn edit-photo" (click)="editPhoto()">Edit Photo</button>
+              <button class="btn edit-profile" (click)="toggleEdit()">Edit Profile</button>
+            </div>
+          </div>
+          <div class="profile-details">
+            <div *ngIf="!isEditing">
+              <p>
+                I'm {{ user.name }} and I'm above {{ user.age }} years and you can send your emails to
+                <a [href]="'mailto:' + user.email">{{ user.email }}</a>. I live in the state of {{ user.state }}.
+                I like to play {{ user.hobbies }}. And please send me newsletters. Please reach out to me on my phone number.
+              </p>
+              <button class="btn agree">I Agree</button>
+             
+    </div>
+  </div>
+</div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav {
+    background-color: #333;
+    padding: 1rem;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    margin: 0;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .search-section {
+
+    background-image: url ('assets/background.jpg') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    padding: 3rem;
+    color: #fff;
+  }
+  
+  .search-section h1 {
+    font-size: 2rem;
+  }
+  
+  .search-section input,
+  .search-section select,
+  .search-section .search-btn,
+  .search-section .register-btn {
+    display: block;
+    margin: 0.5rem auto;
+  }
+  
+  .search-section .filter-options {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  
+  .filter-options input[type="checkbox"] {
+    margin-right: 0.5rem;
+  }
+  
+  .filter-options select {
+    margin-left: 0.5rem;
+  }
+  
+  .about-section,
+  .subscribe-section {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .about-section h3 {
+    font-size: 1.25rem;
+  }
+  
+  .subscribe-section h3 {
+    font-size: 1.25rem;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  footer a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
